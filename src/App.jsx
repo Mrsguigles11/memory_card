@@ -1,14 +1,16 @@
 import "./styles/App.css";
 import { Header } from "./components/Header";
 import { Mainbody } from "./components/MainBody";
-import { pokemonArray } from "./data/pokemon";
+import { useGameLogic } from "./hooks/gameLogic";
 
 function App() {
 
+  const {pokemon} = useGameLogic();
+  
   return (
     <>
       <Header turnCount={0} highScore={0} />
-      <Mainbody pokemon={pokemonArray}/>
+      <Mainbody pokemon={pokemon}/>
     </>
   );
 }

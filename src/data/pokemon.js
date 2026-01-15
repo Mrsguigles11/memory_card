@@ -1,4 +1,6 @@
 
+export async function usePokemonApi() {
+
   let pokemonArray = [
     { name: "pikachu" },
     { name: "poliwhirl" },
@@ -7,7 +9,6 @@
   ];
 
     for (const pokemon of pokemonArray) {
-      async function getPokemon() {
         try {
           const response = await fetch(
             "https://pokeapi.co/api/v2/pokemon/" + pokemon.name
@@ -18,7 +19,9 @@
           console.log(error);
         }
       }
-      getPokemon();
-    }
 
-export {pokemonArray}
+    return pokemonArray
+    }
+  
+    
+
