@@ -1,0 +1,6 @@
+.main_body_container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
