@@ -1,20 +1,12 @@
-// the use of state and a custom hook is not efficient here, it would be more efficient to use vanilla JS however i want
-// to practice using react effects
 
-import { useEffect, useState } from "react";
-
-export function usePokemonApi() {
-  const [pokemonArray, setPokemonArray] = useState([
+  let pokemonArray = [
     { name: "pikachu" },
     { name: "poliwhirl" },
     { name: "charizard" },
     { name: "abra" },
-  ]);
+  ];
 
-  useEffect(() => {
-    const pokemonArrayCopy = [...pokemonArray];
-
-    for (const pokemon of pokemonArrayCopy) {
+    for (const pokemon of pokemonArray) {
       async function getPokemon() {
         try {
           const response = await fetch(
@@ -29,10 +21,4 @@ export function usePokemonApi() {
       getPokemon();
     }
 
-    setPokemonArray(pokemonArrayCopy);
-  }, []);
-
-  console.log(pokemonArray);
-
-  return pokemonArray;
-}
+export {pokemonArray}
