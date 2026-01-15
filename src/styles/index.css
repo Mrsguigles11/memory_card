@@ -1,14 +1,17 @@
 
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
-@import url('https://fonts.cdnfonts.com/css/gill-sans-2');
                 
 :root {
 
   --yellow: #FFCC01;
-  --water-blue: #6390F0;
-  --electric-yellow: #F7D02C;
-  --fire-red: #EE8130;
-  --psychic-pink: #F95587;
+  --water-type: #6390F0;
+  --electric-type: #F7D02C;
+  --fire-type: #EE8130;
+  --psychic-type: #F95587;
+  --grass-type: #7AC74C;
+  --normal-type: #A8A77A;
+  --ground-type: #E2BF65;
+  --ghost-type: #735797;
 
   font-family: 'Pokemon Solid', sans-serif;
   font-weight: 300;
@@ -16,8 +19,8 @@
   text-shadow: 2px 2px 0 #365fac, 2px -2px 0 #365fac, -2px 2px 0 #365fac, -2px -2px 0 #365fac, 2px 0px 0 #365fac, 0px 2px 0 #365fac, -2px 0px 0 #365fac, 0px -2px 0 #365fac;  
   letter-spacing: 3px;  
   font-size: 15px;
-background: #d9d9d9;
-background: linear-gradient(0deg,rgba(217, 217, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  background: #d9d9d9;
+  background: linear-gradient(0deg,rgba(217, 217, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 body {

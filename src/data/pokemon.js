@@ -4,8 +4,17 @@ export async function usePokemonApi() {
   let pokemonArray = [
     { name: "pikachu" },
     { name: "poliwhirl" },
-    { name: "charizard" },
+    { name: "charmander" },
     { name: "abra" },
+    { name: "bulbasaur" },
+    { name: "ditto" },
+    { name: "diglett" },
+    { name: "pidgey" },
+    { name: "magikarp" },
+    { name: "eevee" },
+    { name: "gengar" },
+    { name: "mew" },
+
   ];
 
     for (const pokemon of pokemonArray) {
