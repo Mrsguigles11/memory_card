@@ -15,6 +15,7 @@ export async function usePokemonApi() {
           );
           const data = await response.json();
           pokemon.image = data.sprites.front_default;
+          pokemon.type = data.types[0].type.name;
         } catch (error) {
           console.log(error);
         }

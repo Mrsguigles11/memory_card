@@ -1,5 +1,5 @@
 .card {
-    border: 2px solid black;
+    border: 4px solid var(--yellow);
     width: 200px;
     height: 280px;
     display: flex;
@@ -8,11 +8,37 @@
     justify-content: space-between;
     padding: 20px;
     border-radius: 3px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: 'Gill Sans', sans-serif;
+    text-shadow: none;
+    color: black;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.card:hover {
+    scale: 1.05;
 }
 
 .card > img {
     height: 160px;
-    border: 1px solid black;
     border-radius: 5px;
+    background-color: white;
+}
+
+#water {
+    background-color: var(--water-blue);
+}
+
+#electric {
+    background-color: var(--electric-yellow);
+}
+
+#fire {
+    background-color: var(--fire-red);
+}
+
+#psychic {
+    background-color: var(--psychic-pink);
 }

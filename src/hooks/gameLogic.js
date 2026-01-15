@@ -13,6 +13,7 @@ export function useGameLogic() {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const pokemonArray = await usePokemonApi();
         setPokemon(pokemonArray)
+        console.log(pokemonArray)
         }
         fetchData();
     }, []);
