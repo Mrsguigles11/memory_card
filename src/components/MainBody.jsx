@@ -1,11 +1,17 @@
 import "../styles/Mainbody.css";
 import { Card } from "./Card";
 
-export function Mainbody({ pokemon }) {
+export function Mainbody({ pokemon, handleClick }) {
   return (
     <div className="main_body_container">
       {pokemon.map((pokemon) => (
-        <Card key={pokemon.name} name={pokemon.name} image={pokemon.image} type={pokemon.type} />
+        <Card
+          key={pokemon.name}
+          name={pokemon.name}
+          image={pokemon.image}
+          type={pokemon.type}
+          handleClick={handleClick}
+        />
       ))}
     </div>
   );

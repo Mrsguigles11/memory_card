@@ -4,7 +4,7 @@ import { usePokemonApi } from '../data/pokemon';
 export function useGameLogic() {
 
     const [pokemon, setPokemon] = useState([]);
-    // const [selectedPokemon, setSelectedPokemon] = useState(new Set());
+    const [selectedPokemon, setSelectedPokemon] = useState(new Set());
     // const [turnCount, setTurnCount] = useState(0);
     // const [highScore, setHighScore] = useState(0);
 
@@ -13,11 +13,19 @@ export function useGameLogic() {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const pokemonArray = await usePokemonApi();
         setPokemon(pokemonArray)
-        console.log(pokemonArray)
         }
         fetchData();
     }, []);
 
-    return {pokemon}
+    function updateGameState(userSelection) {
+        setSelectedPokemon(prev => {
+            const updated = new Set(prev);
+            updated.add(userSelection);
+            console.log(updated);
+            return updated
+        }) 
+    }
+
+    return {pokemon, updateGameState}
 
 }
