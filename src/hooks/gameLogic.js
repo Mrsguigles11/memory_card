@@ -29,13 +29,12 @@ export function useGameLogic() {
     setSelectedPokemon((prev) => {
       const updated = new Set(prev);
       updated.add(userSelection);
-      console.log(updated);
       return updated;
     });
     setTurnCount((prev) => prev + 1);
-    // let pokemonCopy = [...pokemon];
-    // pokemonCopy = shuffleArray(pokemonCopy);
-    // setPokemon(pokemonCopy);
+    let pokemonCopy = [...pokemon];
+    pokemonCopy = shuffleArray(pokemonCopy);
+    setPokemon(pokemonCopy);
   }
 
   function shuffleArray(array) {

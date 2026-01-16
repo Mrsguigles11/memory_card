@@ -3,7 +3,7 @@
                 
 :root {
 
-  --yellow: #FFCC01;
+  --primary-yellow: #FFCC01;
   --water-type: #6390F0;
   --electric-type: #F7D02C;
   --fire-type: #EE8130;
@@ -15,12 +15,12 @@
 
   font-family: 'Pokemon Solid', sans-serif;
   font-weight: 300;
-  color: var(--yellow);               
+  color: var(--primary-yellow);               
   text-shadow: 2px 2px 0 #365fac, 2px -2px 0 #365fac, -2px 2px 0 #365fac, -2px -2px 0 #365fac, 2px 0px 0 #365fac, 0px 2px 0 #365fac, -2px 0px 0 #365fac, 0px -2px 0 #365fac;  
   letter-spacing: 3px;  
   font-size: 15px;
-  background: #d9d9d9;
-  background: linear-gradient(0deg,rgba(217, 217, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  background: #CAFAEF;
+  background: linear-gradient(180deg,rgba(202, 250, 239, 1) 0%, rgba(48, 255, 200, 1) 50%, rgba(202, 250, 239, 1) 100%);
 }
 
 body {
