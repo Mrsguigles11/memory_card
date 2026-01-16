@@ -5,7 +5,7 @@ export function useGameLogic() {
   const [pokemon, setPokemon] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(new Set());
   const [turnCount, setTurnCount] = useState(0);
-  // const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -17,14 +17,16 @@ export function useGameLogic() {
   }, []);
 
   function updateGameState(userSelection) {
-    if (!selectedPokemon.has(userSelection)) {
+    if (selectedPokemon.has(userSelection)) { 
+        resetGame();
+        return
+    }
       setSelectedPokemon((prev) => {
         const updated = new Set(prev);
         updated.add(userSelection);
         console.log(updated);
         return updated;
       });
-    }
     setTurnCount((prev) => prev + 1);
     let pokemonCopy = [...pokemon];
     pokemonCopy = shuffleArray(pokemonCopy);
@@ -40,5 +42,16 @@ export function useGameLogic() {
     return arr;
   }
 
-  return { pokemon, turnCount, updateGameState };
+  function resetGame() {
+    if (turnCount > highScore) {
+            setHighScore(turnCount)
+        }
+    let pokemonCopy = [...pokemon];
+    pokemonCopy = shuffleArray(pokemonCopy);
+    setPokemon(pokemonCopy);
+    setSelectedPokemon(new Set());
+    setTurnCount(0);
+  }
+
+  return { pokemon, turnCount, highScore, updateGameState };
 }

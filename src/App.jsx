@@ -5,7 +5,7 @@ import { useGameLogic } from "./hooks/gameLogic";
 
 function App() {
 
-  const {pokemon, turnCount, updateGameState} = useGameLogic();
+  const {pokemon, turnCount, highScore, updateGameState} = useGameLogic();
 
   function handleClick(userSelection) {
     updateGameState(userSelection);
@@ -13,7 +13,7 @@ function App() {
   
   return (
     <>
-      <Header turnCount={turnCount} highScore={0} />
+      <Header turnCount={turnCount} highScore={highScore} />
       <Mainbody pokemon={pokemon} handleClick={handleClick}/>
     </>
   );
