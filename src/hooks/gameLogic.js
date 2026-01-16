@@ -17,20 +17,25 @@ export function useGameLogic() {
   }, []);
 
   function updateGameState(userSelection) {
-    if (selectedPokemon.has(userSelection)) { 
-        resetGame();
-        return
+    if (turnCount === 11 && !selectedPokemon.has(userSelection)) {
+      resetGame(true);
+      return;
     }
-      setSelectedPokemon((prev) => {
-        const updated = new Set(prev);
-        updated.add(userSelection);
-        console.log(updated);
-        return updated;
-      });
+    if (selectedPokemon.has(userSelection)) {
+      alert("Game over!");
+      resetGame();
+      return;
+    }
+    setSelectedPokemon((prev) => {
+      const updated = new Set(prev);
+      updated.add(userSelection);
+      console.log(updated);
+      return updated;
+    });
     setTurnCount((prev) => prev + 1);
-    let pokemonCopy = [...pokemon];
-    pokemonCopy = shuffleArray(pokemonCopy);
-    setPokemon(pokemonCopy);
+    // let pokemonCopy = [...pokemon];
+    // pokemonCopy = shuffleArray(pokemonCopy);
+    // setPokemon(pokemonCopy);
   }
 
   function shuffleArray(array) {
@@ -42,10 +47,12 @@ export function useGameLogic() {
     return arr;
   }
 
-  function resetGame() {
-    if (turnCount > highScore) {
-            setHighScore(turnCount)
-        }
+  function resetGame(gameWon) {
+    if (gameWon) {
+      setHighScore(12);
+    } else if (turnCount > highScore) {
+      setHighScore(turnCount);
+    }
     let pokemonCopy = [...pokemon];
     pokemonCopy = shuffleArray(pokemonCopy);
     setPokemon(pokemonCopy);

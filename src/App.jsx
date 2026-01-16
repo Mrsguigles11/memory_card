@@ -15,6 +15,7 @@ function App() {
     <>
       <Header turnCount={turnCount} highScore={highScore} />
       <Mainbody pokemon={pokemon} handleClick={handleClick}/>
+      <div className="game_info">Try to click all 12 cards without clicking on the same one twice!</div>
     </>
   );
 }
