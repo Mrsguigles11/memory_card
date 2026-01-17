@@ -56,3 +56,27 @@
 #ghost {
     background-color: var(--ghost-type);
 }
+
+@media(max-width: 769px) {
+    .card {
+        width: 150px;
+        height: 230px;
+        font-size: 1.1rem;
+    }
+
+    .card > img {
+        height: 120px;
+    }
+}
+
+@media(max-width: 425px) {
+    .card {
+        width: 100px;
+        height: 160px;
+        font-size: 0.6rem;
+    }
+
+    .card > img {
+        height: 60px;
+    }
+}
