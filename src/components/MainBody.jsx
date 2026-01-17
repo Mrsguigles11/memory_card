@@ -3,7 +3,7 @@ import { Card } from "./Card";
 
 export function Mainbody({ pokemon, handleClick }) {
   return (
-    <div className="main_body_container">
+    <main className="main_body_container">
       {pokemon.map((pokemon) => (
         <Card
           key={pokemon.name}
@@ -13,6 +13,6 @@ export function Mainbody({ pokemon, handleClick }) {
           handleClick={handleClick}
         />
       ))}
-    </div>
+    </main>
   );
 }
