@@ -48,3 +48,16 @@
 .visible {
     display: flex;
 }
+
+.run_animation {
+    animation: 0.5s scale;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

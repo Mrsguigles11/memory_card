@@ -19,6 +19,7 @@ export function useGameLogic() {
 
   function updateGameState(userSelection) {
     if (turnCount === 11 && !selectedPokemon.has(userSelection)) {
+      setTurnCount(12)
       setResult("game won");
       return;
     }
@@ -32,9 +33,9 @@ export function useGameLogic() {
       return updated;
     });
     setTurnCount((prev) => prev + 1);
-    // let pokemonCopy = [...pokemon];
-    // pokemonCopy = shuffleArray(pokemonCopy);
-    // setPokemon(pokemonCopy);
+    let pokemonCopy = [...pokemon];
+    pokemonCopy = shuffleArray(pokemonCopy);
+    setPokemon(pokemonCopy);
   }
 
   function shuffleArray(array) {
