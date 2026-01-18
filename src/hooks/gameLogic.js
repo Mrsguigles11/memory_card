@@ -6,6 +6,7 @@ export function useGameLogic() {
   const [selectedPokemon, setSelectedPokemon] = useState(new Set());
   const [turnCount, setTurnCount] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -59,5 +60,5 @@ export function useGameLogic() {
     setTurnCount(0);
   }
 
-  return { pokemon, turnCount, highScore, updateGameState };
+  return { pokemon, turnCount, highScore, result, updateGameState };
 }

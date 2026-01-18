@@ -1,14 +1,15 @@
 import "../styles/GameEndOverlay.css"
 
-export function GameEndOverlay({score}) {
+export function GameEndOverlay({result, score}) {
+
     return (
-        <div className="overlay visible">
+        <div className={result != "" ? "overlay visible" : "overlay"}>
             <div className="overlay_card">
-                <div className="game_over visible">
+                <div className={result === "game over" ? "game_over visible" : "game_over"}>
                     <h1>Game Over!</h1>
                     Score: {score}
                 </div>
-                <h1 className="game_won visible">You Win!</h1>
+                <h1 className={result === "game won" ? "game_won visible": "game_won"}>You Win!</h1>
                 <button>Reset</button>
             </div>
         </div>
