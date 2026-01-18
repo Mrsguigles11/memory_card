@@ -6,7 +6,7 @@ import { GameEndOverlay } from "./components/GameEndOverlay";
 
 function App() {
 
-  const {pokemon, turnCount, highScore, result, updateGameState} = useGameLogic();
+  const {pokemon, turnCount, highScore, result, resetGame, updateGameState} = useGameLogic();
 
   function handleClick(userSelection) {
     updateGameState(userSelection);
@@ -17,7 +17,7 @@ function App() {
       <Header turnCount={turnCount} highScore={highScore} />
       <Mainbody pokemon={pokemon} handleClick={handleClick}/>
       <footer className="game_info">Try to click all 12 cards without clicking on the same one twice!</footer>
-      <GameEndOverlay result={result} score={turnCount}/>
+      <GameEndOverlay result={result} score={turnCount} reset={resetGame}/>
     </>
   );
 }

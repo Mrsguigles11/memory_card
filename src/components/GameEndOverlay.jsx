@@ -1,6 +1,6 @@
 import "../styles/GameEndOverlay.css"
 
-export function GameEndOverlay({result, score}) {
+export function GameEndOverlay({result, score, reset}) {
 
     return (
         <div className={result != "" ? "overlay visible" : "overlay"}>
@@ -10,7 +10,7 @@ export function GameEndOverlay({result, score}) {
                     Score: {score}
                 </div>
                 <h1 className={result === "game won" ? "game_won visible": "game_won"}>You Win!</h1>
-                <button>Reset</button>
+                <button onClick={() => reset(result === "game over" ? false : true)}>Reset</button>
             </div>
         </div>
     )

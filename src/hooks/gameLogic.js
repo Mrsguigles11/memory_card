@@ -19,12 +19,11 @@ export function useGameLogic() {
 
   function updateGameState(userSelection) {
     if (turnCount === 11 && !selectedPokemon.has(userSelection)) {
-      resetGame(true);
+      setResult("game won");
       return;
     }
     if (selectedPokemon.has(userSelection)) {
-      alert("Game over!");
-      resetGame();
+      setResult("game over")
       return;
     }
     setSelectedPokemon((prev) => {
@@ -33,9 +32,9 @@ export function useGameLogic() {
       return updated;
     });
     setTurnCount((prev) => prev + 1);
-    let pokemonCopy = [...pokemon];
-    pokemonCopy = shuffleArray(pokemonCopy);
-    setPokemon(pokemonCopy);
+    // let pokemonCopy = [...pokemon];
+    // pokemonCopy = shuffleArray(pokemonCopy);
+    // setPokemon(pokemonCopy);
   }
 
   function shuffleArray(array) {
@@ -58,7 +57,8 @@ export function useGameLogic() {
     setPokemon(pokemonCopy);
     setSelectedPokemon(new Set());
     setTurnCount(0);
+    setResult("")
   }
 
-  return { pokemon, turnCount, highScore, result, updateGameState };
+  return { pokemon, turnCount, highScore, result, resetGame, updateGameState };
 }
