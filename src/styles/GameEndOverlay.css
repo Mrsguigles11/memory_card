@@ -61,3 +61,15 @@
         transform: scale(1);
     }
 }
+
+@media (max-width: 768px) {
+    .overlay_card {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .overlay_card {
+        font-size: 1.2rem;
+    }
+}
