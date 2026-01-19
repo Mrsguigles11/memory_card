@@ -4,6 +4,7 @@ import { Card } from "./Card";
 export function Mainbody({ pokemon, handleClick }) {
   return (
     <main className="main_body_container">
+      <div className={pokemon.length === 0 ? "loader visible" : "loader"}></div>
       {pokemon.map((pokemon) => (
         <Card
           key={pokemon.name}
