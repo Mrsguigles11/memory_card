@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Header turnCount={turnCount} highScore={highScore} />
-      <Mainbody pokemon={pokemon} handleClick={handleClick} />
+      <Mainbody pokemonArray={pokemon} handleClick={handleClick} />
       <footer className="game_info">
         Try to click all 12 cards without clicking on the same one twice!
       </footer>

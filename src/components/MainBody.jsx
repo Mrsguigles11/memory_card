@@ -1,13 +1,14 @@
 import "../styles/Mainbody.css";
 import { Card } from "./Card";
 
-export function Mainbody({ pokemon, handleClick }) {
+export function Mainbody({ pokemonArray, handleClick }) {
+
   return (
     <main className="main_body_container">
-      <div className={pokemon.length === 0 ? "loader visible" : "loader"}></div>
-      {pokemon.map((pokemon) => (
+      <div className={pokemonArray.length === 0 ? "loader visible" : "loader"}></div>
+      {pokemonArray.map((pokemon) => (
         <Card
-          key={pokemon.name}
+          key={pokemonArray.indexOf(pokemon)}
           name={pokemon.name}
           image={pokemon.image}
           type={pokemon.type}
